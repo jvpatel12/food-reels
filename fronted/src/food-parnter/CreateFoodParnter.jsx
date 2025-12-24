@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import apiClient from "../services/api";
 import "../css/create-food.css";
 
 function CreateFoodParnter() {
@@ -60,8 +60,7 @@ function CreateFoodParnter() {
       uploadData.append("description", formData.description);
       uploadData.append("video", videoFile);
 
-      await axios.post("http://localhost:3000/api/food", uploadData, {
-        withCredentials: true,
+      await apiClient.post("/api/food", uploadData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

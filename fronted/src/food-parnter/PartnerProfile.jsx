@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import '../css/profile.css'
-import axios from 'axios'
+import apiClient from '../services/api'
 
 function PartnerProfile() {
   const { partnerId } = useParams()
@@ -18,9 +18,8 @@ function PartnerProfile() {
         setLoading(true)
 
         // Fetch partner's videos
-        const videosResponse = await axios.get(
-          `http://localhost:3000/api/food`,
-          { withCredentials: true }
+        const videosResponse = await apiClient.get(
+          `/api/food`
         )
 
         // Filter videos for this partner

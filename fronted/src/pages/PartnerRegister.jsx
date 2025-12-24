@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../css/auth.css'
 import { Link, useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import apiClient from '../services/api'
 
 export default function PartnerRegister() {
   const navigate = useNavigate();
@@ -32,10 +32,9 @@ export default function PartnerRegister() {
     }
 
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/auth/foodpartner/register",
-        { name, email, password },
-        { withCredentials: true }
+      const response = await apiClient.post(
+        "/api/auth/foodpartner/register",
+        { name, email, password }
       );
 
       console.log('✅ Partner registration success:', response.data);

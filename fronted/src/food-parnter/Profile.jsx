@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../css/profile.css'
-import axios from 'axios'
+import apiClient from '../services/api'
 
 function Profile() {
   const [profileData, setProfileData] = useState(null)
@@ -17,15 +17,13 @@ function Profile() {
         setLoading(true)
         
         // Fetch partner profile
-        const profileResponse = await axios.get(
-          'http://localhost:3000/api/auth/foodpartner/profile',
-          { withCredentials: true }
+        const profileResponse = await apiClient.get(
+          '/api/auth/foodpartner/profile'
         )
 
         // Fetch partner's videos
-        const videosResponse = await axios.get(
-          'http://localhost:3000/api/food/partner/videos',
-          { withCredentials: true }
+        const videosResponse = await apiClient.get(
+          '/api/food/partner/videos'
         )
 
         // Set profile data

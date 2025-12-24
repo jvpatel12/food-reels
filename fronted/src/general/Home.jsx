@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/home.css";
-import axios from "axios";
+import apiClient from "../services/api";
 
 function Home() {
   const [videos, setVideos] = useState([]);
@@ -13,9 +13,7 @@ function Home() {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/food", {
-          withCredentials: true,
-        });
+        const response = await apiClient.get("/api/food");
 
         setVideos(response.data.foodItems);
       } catch (error) {

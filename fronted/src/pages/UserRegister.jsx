@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import '../css/auth.css'
-import axios from 'axios'
+import apiClient from '../services/api'
 
 export default function UserRegister() {
   const navigate = useNavigate();
@@ -32,10 +32,9 @@ export default function UserRegister() {
     }
 
     try {
-      const response = await axios.post(
-        'http://localhost:3000/api/auth/user/register',
-        { name, email, password },
-        { withCredentials: true }
+      const response = await apiClient.post(
+        '/api/auth/user/register',
+        { name, email, password }
       );
 
       console.log('✅ Registration success:', response.data);

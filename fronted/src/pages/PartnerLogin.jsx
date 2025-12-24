@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import '../css/auth.css'
-import axios from 'axios';
+import apiClient from '../services/api';
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function PartnerLogin() {
@@ -25,10 +25,9 @@ export default function PartnerLogin() {
     }
 
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/auth/foodpartner/login",
-        { email, password },
-        { withCredentials: true }
+      const response = await apiClient.post(
+        "/api/auth/foodpartner/login",
+        { email, password }
       );
 
       console.log("✅ Partner login success:", response.data);
