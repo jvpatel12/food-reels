@@ -1,0 +1,345 @@
+/* Create Food Form Styles */
+
+.create-food-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgba(14, 165, 164, 0.05), rgba(14, 165, 164, 0.02));
+  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-food-card {
+  width: 100%;
+  max-width: 700px;
+  background: var(--card);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 40px var(--shadow-color);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.card-header {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  color: var(--text);
+}
+
+.card-subtitle {
+  font-size: 16px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Alerts */
+.alert {
+  padding: 14px 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.alert-error {
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid #ef4444;
+  color: #dc2626;
+}
+
+.alert-success {
+  background-color: rgba(34, 197, 94, 0.1);
+  border: 1px solid #22c55e;
+  color: #166534;
+}
+
+/* Form */
+.create-food-form {
+  margin-bottom: 32px;
+}
+
+.form-group {
+  margin-bottom: 28px;
+}
+
+.form-label {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  background: var(--input-bg);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 6px 20px rgba(14, 165, 164, 0.1);
+}
+
+.form-input:disabled,
+.form-textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-hint {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+
+/* Video Upload Area */
+.video-upload-area {
+  margin-top: 12px;
+}
+
+.upload-label {
+  display: block;
+  cursor: pointer;
+  border: 2px dashed var(--accent);
+  border-radius: 12px;
+  padding: 40px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  background: rgba(14, 165, 164, 0.05);
+}
+
+.upload-label:hover {
+  border-color: var(--accent);
+  background: rgba(14, 165, 164, 0.1);
+}
+
+.file-input {
+  display: none;
+}
+
+.upload-content {
+  pointer-events: none;
+}
+
+.upload-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.upload-text {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text);
+  margin: 0 0 6px 0;
+}
+
+.upload-hint {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Video Preview */
+.video-preview {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+  margin-top: 12px;
+}
+
+.preview-video {
+  width: 100%;
+  max-height: 300px;
+  display: block;
+}
+
+.remove-video-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.remove-video-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.btn {
+  flex: 1;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(14, 165, 164, 0.3);
+}
+
+.btn-secondary {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--accent);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Help Section */
+.help-section {
+  background: rgba(14, 165, 164, 0.05);
+  border-left: 4px solid var(--accent);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.help-section h3 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.help-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.help-section li {
+  padding: 6px 0;
+  color: var(--muted);
+  font-size: 13px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.help-section li::before {
+  content: '✓';
+  color: var(--accent);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .create-food-container {
+    padding: 20px 12px;
+  }
+
+  .create-food-card {
+    padding: 24px;
+  }
+
+  .card-title {
+    font-size: 22px;
+  }
+
+  .card-subtitle {
+    font-size: 14px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .upload-label {
+    padding: 30px 16px;
+  }
+
+  .upload-icon {
+    font-size: 40px;
+  }
+
+  .preview-video {
+    max-height: 250px;
+  }
+}
+
+/* Loading State */
+input:disabled,
+textarea:disabled,
+.btn:disabled {
+  background-color: rgba(0, 0, 0, 0.02);
+}

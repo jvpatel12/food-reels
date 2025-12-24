@@ -1,0 +1,22 @@
+/* Centralized theme variables (light/dark via system preferences) */
+:root {
+  --bg: #ffffff;
+  --text: #0b1220;
+  --muted: #6b7280;
+  --card: #f8fafc;
+  --accent: #0ea5a4;
+  --input-bg: #ffffff;
+  --shadow-color: rgba(2,6,23,0.06);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #071426;
+    --text: #e6eef8;
+    --muted: #9aa6b2;
+    --card: #08101a;
+    --accent: #34d399;
+    --input-bg: #06101a;
+    --shadow-color: rgba(2,6,23,0.6);
+  }
+}

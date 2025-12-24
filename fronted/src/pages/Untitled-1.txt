@@ -1,0 +1,4 @@
+/user/register=> user register from
+/user/login => user login from
+/food-partner/register => food -parnter register fomr
+/food-partner/login
